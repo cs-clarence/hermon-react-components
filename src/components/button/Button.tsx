@@ -1,8 +1,8 @@
-import { InterationStates } from "$components";
+import { InteractionState } from "$components";
 
 export type ButtonVariants = "tonal" | "outlined" | "elevated" | "text" | "";
 
-export type ButtonInteractionStates = InterationStates;
+export type ButtonInteractionStates = InteractionState;
 
 export interface ButtonProps {
   children: React.ReactNode;

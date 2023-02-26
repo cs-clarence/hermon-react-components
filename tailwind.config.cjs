@@ -8,6 +8,10 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
+      colors: {
+        current: "currentColor",
+        transparent: "transparent",
+      },
     },
   },
   plugins: [
@@ -15,6 +19,10 @@ module.exports = {
       theme: {
         color: {
           seed: "#0070C9",
+          custom: {
+            orange: "#F7821B",
+            red: "#F23D44",
+          },
         },
       },
     }),

@@ -1,4 +1,8 @@
-import { InterationStates } from "$components";
+import {
+  InteractionStateClasses,
+  InteractionState,
+  StateLayer,
+} from "$components";
 import c from "classnames";
 
 export interface DrawerItemProps {
@@ -6,7 +10,7 @@ export interface DrawerItemProps {
   children?: React.ReactNode;
   start?: React.ReactNode;
   end?: React.ReactNode;
-  state?: InterationStates;
+  state?: InteractionState;
 }
 
 const defaults: DrawerItemProps = {
@@ -14,23 +18,27 @@ const defaults: DrawerItemProps = {
   href: "#",
 };
 
-const MenuItem: React.FC<DrawerItemProps> = (props) => {
+const stateClasses: InteractionStateClasses = {
+  selected: "text-on-primary bg-primary",
+  enabled: "text-on-surface-variant",
+};
+
+const DrawerItem: React.FC<DrawerItemProps> = (props) => {
   props = { ...defaults, ...props };
+
   return (
     <a
       href={props.href}
       className={c(
-        "flex px-6 py-4 flex-row items-center gap-4 min-h-[52px] rounded-large text-label-large",
-        {
-          "text-on-surface-variant": props.state === "enabled",
-          "text-on-primary bg-primary": props.state === "activated",
-        },
+        `flex px-6 py-4 flex-row items-center gap-4 min-h-[52px] rounded-large text-label-large overflow-clip group font-bold`,
+        stateClasses[props.state ?? "enabled"],
       )}
     >
+      <StateLayer state={props.state} />
       <div>{props.start}</div>
       <div>{props.children}</div>
     </a>
   );
 };
 
-export default MenuItem;
+export default DrawerItem;

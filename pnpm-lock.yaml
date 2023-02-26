@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@rencedm112/tailwind-md': ^0.0.5
+  '@rencedm112/tailwind-md': ^0.0.6
   '@types/react': ^18.0.28
   '@types/react-dom': ^18.0.11
   '@vitejs/plugin-react-swc': ^3.2.0
@@ -26,7 +26,7 @@ dependencies:
   tailwindcss: 3.2.7_postcss@8.4.21
 
 devDependencies:
-  '@rencedm112/tailwind-md': 0.0.5
+  '@rencedm112/tailwind-md': 0.0.6
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   '@vitejs/plugin-react-swc': 3.2.0_vite@4.1.4
@@ -315,8 +315,8 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
 
-  /@rencedm112/tailwind-md/0.0.5:
-    resolution: {integrity: sha512-Ui0hhB/Y95t++OOl3GhPyzWX37Wal7SEARudkJRef944djdH3Vnxqnvhyl0j3KH/0n8daH7lZSEs9RBUvjFs6g==}
+  /@rencedm112/tailwind-md/0.0.6:
+    resolution: {integrity: sha512-aoih5xHSrkE2eEJPbHVenOyt2kBg06JyzjRg7wh+0eaful5Ae+iIrRbzu15ticlCGZUsJVzFL/85F4M0SkQ1bg==}
     dev: true
 
   /@swc/core-darwin-arm64/1.3.36:
