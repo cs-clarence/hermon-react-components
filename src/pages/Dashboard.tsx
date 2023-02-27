@@ -10,8 +10,12 @@ import { Icon } from "$components";
 import { Badge } from "$components/badge";
 import { Card } from "$components/card";
 import { Cycle } from "$components/cycle";
+import c from "classnames";
+import { useState } from "react";
 
 const Page: React.FC = () => {
+  const [showDrawer, setShowDrawer] = useState(false);
+
   const menuItems: DrawerItemProps[] = [
     {
       children: "Home",
@@ -53,11 +57,34 @@ const Page: React.FC = () => {
 
   return (
     <div className="flex flex-row gap-8 items-start">
-      <div className="top-0 left-0 hidden 2xl:block sticky pl-8">
-        <Drawer className="w-72">
+      <div
+        onClick={() => setShowDrawer((s) => !s)}
+        className={c(
+          `
+            top-0
+            left-0 
+            fixed 
+            z-50
+            2xl:sticky 
+            h-screen 
+            2xl:block 
+            2xl:pl-8
+            w-full
+            transition-colors
+            duration-300
+          `,
+          showDrawer ? "bg-scrim/[20%]" : "bg-scrim/[0%] pointer-events-none",
+        )}
+      >
+        <Drawer
+          className={c(
+            "w-72 h-full bg-surface p-4 transition-transform duration-300",
+            showDrawer ? "translate-x-0" : "-translate-x-full",
+          )}
+        >
           <img
             src={siteLogo}
-            className="object-contain object-center hidden lg:block"
+            className="object-contain object-center hidden 2xl:block"
             alt="logo"
           />
 
@@ -72,7 +99,9 @@ const Page: React.FC = () => {
           className="p-8"
           start={
             <div className="flex flex-row gap-4 items-center 2xl:hidden">
-              <Icon className="text-[42px]">menu</Icon>
+              <button onClick={() => setShowDrawer((show) => !show)}>
+                <Icon className="text-[42px]">menu</Icon>
+              </button>
               <img
                 src={siteLogo}
                 className="object-contain object-center w-36"
@@ -81,7 +110,7 @@ const Page: React.FC = () => {
             </div>
           }
           end={
-            <div className="flex flex-row gap-8 items-center text-on-surface-variant">
+            <div className="hidden sm:flex flex-row gap-8 items-center text-on-surface-variant">
               <div>
                 <Icon className="text-[42px]">notifications</Icon>
                 <Badge className="absolute top-0 right-0">1</Badge>
@@ -99,9 +128,9 @@ const Page: React.FC = () => {
             </div>
           }
         />
-        <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4">
           {/* Stats */}
-          <Card className="col-span-3 !p-8 grid grid-cols-4">
+          <Card className="!p-8 grid gap-8 sm:grid-cols-2 xl:grid-cols-4 col-span-1 md:col-span-2 2xl:col-span-3">
             {/* Total Revenue */}
             <div className="flex flex-col gap-4 items-center border-r-2 border-outline-variant">
               <span className="text-label-large text-on-surface-variant align-middle flex flex-row items-center gap-2">
@@ -162,7 +191,7 @@ const Page: React.FC = () => {
           </Card>
 
           {/* Weekly Cycles */}
-          <Card className="col-span-2 flex flex-col gap-8">
+          <Card className="col-span-1 md:col-span-2 flex flex-col gap-8">
             <div className="flex flex-row items-end">
               <h2 className="text-headline-large font-medium">Weekly Cycles</h2>
               <div className="flex-grow"></div>
