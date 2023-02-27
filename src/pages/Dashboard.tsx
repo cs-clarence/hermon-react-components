@@ -11,10 +11,23 @@ import { Badge } from "$components/badge";
 import { Card } from "$components/card";
 import { Cycle } from "$components/cycle";
 import c from "classnames";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Page: React.FC = () => {
   const [showDrawer, setShowDrawer] = useState(false);
+
+  const handleResize = () => {
+    if (window.innerWidth >= 1536) {
+      setShowDrawer(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 
   const menuItems: DrawerItemProps[] = [
     {
@@ -56,7 +69,7 @@ const Page: React.FC = () => {
   ];
 
   const statAdditionalClass =
-    "border-on-surface-variant/[25%] border-b-4 sm:border-b-0 sm:border-r-4 last:border-b-0 sm:even:border-r-0 xl:[&:nth-child(2)]:border-r-4 xl:last:border-r-0 py-16";
+    "border-on-surface-variant/[25%] border-b sm:border-b-0 sm:border-r last:border-b-0 sm:even:border-r-0 xl:[&:nth-child(2)]:border-r xl:last:border-r-0 py-16";
 
   return (
     <div className="flex flex-row items-start gap-8">
