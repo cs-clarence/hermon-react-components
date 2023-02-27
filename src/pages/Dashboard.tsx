@@ -56,7 +56,7 @@ const Page: React.FC = () => {
   ];
 
   const statAdditionalClass =
-    "border-on-surface-variant/[25%] border-b-4 sm:border-b-0 sm:border-r-4 last:border-b-0 sm:even:border-r-0 xl:even:border-r-4 xl:last:border-r-0 py-16";
+    "border-on-surface-variant/[25%] border-b-4 sm:border-b-0 sm:border-r-4 last:border-b-0 sm:even:border-r-0 xl:[&:nth-child(2)]:border-r-4 xl:last:border-r-0 py-16";
 
   return (
     <div className="flex flex-row items-start gap-8">
@@ -237,22 +237,24 @@ const Page: React.FC = () => {
               </select>
             </div>
 
-            <div className="flex flex-row justify-around gap-4 overflow-y-scroll">
-              <div className="flex flex-col items-center gap-2">
-                <Cycle />
-                <p className="text-label-large">Week 1</p>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <Cycle selected={true} />
-                <p className="text-label-large">Week 2</p>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <Cycle />
-                <p className="text-label-large">Week 3</p>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <Cycle />
-                <p className="text-label-large">Week 4</p>
+            <div className="overflow-y-scroll">
+              <div className="flex min-w-max flex-row justify-around gap-4 pb-4">
+                <div className="flex flex-col items-center gap-2">
+                  <Cycle />
+                  <p className="text-label-large">Week 1</p>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Cycle selected={true} />
+                  <p className="text-label-large">Week 2</p>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Cycle />
+                  <p className="text-label-large">Week 3</p>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Cycle />
+                  <p className="text-label-large">Week 4</p>
+                </div>
               </div>
             </div>
           </Card>
