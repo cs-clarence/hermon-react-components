@@ -61,6 +61,8 @@ export function useInteractionState(
 
     el.addEventListener("focus", handleFocus);
 
+    el.addEventListener("focusout", handleFocus);
+
     el.addEventListener("dragstart", handleDragStart);
 
     el.addEventListener("dragend", handleDragEnd);

@@ -16,6 +16,10 @@ import { useEffect, useState } from "react";
 const Page: React.FC = () => {
   const [showDrawer, setShowDrawer] = useState(false);
 
+  useEffect(() => {
+    document.body.style.overflow = showDrawer ? "hidden" : "unset";
+  }, [showDrawer]);
+
   const handleResize = () => {
     if (window.innerWidth >= 1536) {
       setShowDrawer(false);
@@ -95,7 +99,7 @@ const Page: React.FC = () => {
       >
         <Drawer
           className={c(
-            "h-full w-72 bg-surface p-4 transition-transform duration-300 2xl:translate-x-0 2xl:bg-transparent",
+            "pointer-events-auto h-full w-72 bg-surface p-4 transition-transform duration-300 2xl:translate-x-0 2xl:bg-transparent",
             showDrawer ? "translate-x-0" : "-translate-x-full",
           )}
         >
@@ -114,9 +118,10 @@ const Page: React.FC = () => {
         </Drawer>
       </div>
 
-      <div className="container mx-auto w-full flex-grow px-8 pb-8">
+      <div className="container mx-auto flex w-full flex-grow flex-col gap-4 p-4 sm:p-8">
+        {/* Header */}
         <TopAppBar
-          className="py-8"
+          className={c("py-4 text-on-surface-variant sm:px-4")}
           start={
             <div className="flex flex-row items-center gap-4 2xl:hidden">
               <button onClick={() => setShowDrawer((show) => !show)}>
@@ -130,14 +135,15 @@ const Page: React.FC = () => {
             </div>
           }
           end={
-            <div className="hidden flex-row items-center gap-8 text-on-surface-variant sm:flex">
+            // Notifications and Account
+            <div className="flex flex-row items-center gap-4 sm:gap-8">
               <div>
                 <Icon className="text-[42px]">notifications</Icon>
                 <Badge className="absolute top-0 right-0">1</Badge>
               </div>
               <div className="flex flex-row items-center gap-3">
                 <Icon className="text-[42px]">account_circle</Icon>
-                <div className="flex flex-col">
+                <div className="hidden flex-col sm:flex">
                   <p className="text-title-medium text-on-surface">
                     John Doe
                     <Icon className="text-[24px]">arrow_drop_down</Icon>
@@ -148,6 +154,8 @@ const Page: React.FC = () => {
             </div>
           }
         />
+
+        {/* Content */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
           {/* Stats */}
           <Card className="col-span-1 grid !p-0 sm:grid-cols-2 md:col-span-2 xl:grid-cols-4 2xl:col-span-3">
