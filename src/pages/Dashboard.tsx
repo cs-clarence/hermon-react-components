@@ -55,67 +55,74 @@ const Page: React.FC = () => {
     },
   ];
 
+  const statAdditionalClass =
+    "border-on-surface-variant/[25%] border-b-4 sm:border-b-0 sm:border-r-4 last:border-b-0 sm:even:border-r-0 xl:even:border-r-4 xl:last:border-r-0 py-16";
+
   return (
-    <div className="flex flex-row gap-8 items-start">
+    <div className="flex flex-row items-start gap-8">
       <div
         onClick={() => setShowDrawer((s) => !s)}
         className={c(
           `
-            top-0
+            fixed
+            top-0 
             left-0 
-            fixed 
-            z-50
-            2xl:sticky 
-            h-screen 
-            2xl:block 
-            2xl:pl-8
-            w-full
-            transition-colors
+            z-50 
+            h-screen
+            w-full 
+            transition-colors 
             duration-300
+            2xl:sticky
+            2xl:block
+            2xl:w-[unset]
+            2xl:pl-8
           `,
-          showDrawer ? "bg-scrim/[20%]" : "bg-scrim/[0%] pointer-events-none",
+          showDrawer ? "bg-scrim/[20%]" : "pointer-events-none bg-scrim/[0%]",
         )}
       >
         <Drawer
           className={c(
-            "w-72 h-full bg-surface p-4 transition-transform duration-300",
+            "h-full w-72 bg-surface p-4 transition-transform duration-300 2xl:translate-x-0 2xl:bg-transparent",
             showDrawer ? "translate-x-0" : "-translate-x-full",
           )}
         >
           <img
             src={siteLogo}
-            className="object-contain object-center hidden 2xl:block"
+            className="hidden object-contain object-center 2xl:block"
             alt="logo"
           />
 
           {menuItems.map((item, i) => (
-            <DrawerItem {...item} key={i} />
+            <DrawerItem
+              {...item}
+              key={i}
+            />
           ))}
         </Drawer>
       </div>
 
-      <div className="flex-grow px-8 pb-8">
+      <div className="container mx-auto w-full flex-grow px-8 pb-8">
         <TopAppBar
-          className="p-8"
+          className="py-8"
           start={
-            <div className="flex flex-row gap-4 items-center 2xl:hidden">
+            <div className="flex flex-row items-center gap-4 2xl:hidden">
               <button onClick={() => setShowDrawer((show) => !show)}>
                 <Icon className="text-[42px]">menu</Icon>
               </button>
               <img
                 src={siteLogo}
-                className="object-contain object-center w-36"
+                className="w-36 object-contain object-center"
                 alt="logo"
               />
             </div>
           }
           end={
-            <div className="hidden sm:flex flex-row gap-8 items-center text-on-surface-variant">
+            <div className="hidden flex-row items-center gap-8 text-on-surface-variant sm:flex">
               <div>
                 <Icon className="text-[42px]">notifications</Icon>
                 <Badge className="absolute top-0 right-0">1</Badge>
               </div>
-              <div className="flex flex-row gap-3 items-center">
+              <div className="flex flex-row items-center gap-3">
                 <Icon className="text-[42px]">account_circle</Icon>
                 <div className="flex flex-col">
                   <p className="text-title-medium text-on-surface">
@@ -128,61 +135,81 @@ const Page: React.FC = () => {
             </div>
           }
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
           {/* Stats */}
-          <Card className="!p-8 grid gap-8 sm:grid-cols-2 xl:grid-cols-4 col-span-1 md:col-span-2 2xl:col-span-3">
+          <Card className="col-span-1 grid !p-0 sm:grid-cols-2 md:col-span-2 xl:grid-cols-4 2xl:col-span-3">
             {/* Total Revenue */}
-            <div className="flex flex-col gap-4 items-center border-r-2 border-outline-variant">
-              <span className="text-label-large text-on-surface-variant align-middle flex flex-row items-center gap-2">
-                <Icon className="text-success text-[42px]">
+            <div
+              className={c(
+                "flex flex-col items-center gap-4",
+                statAdditionalClass,
+              )}
+            >
+              <span className="flex flex-row items-center gap-2 align-middle text-label-large text-on-surface-variant">
+                <Icon className="text-[42px] text-success">
                   monetization_on
                 </Icon>
                 Total Revenue
               </span>
               <span className="text-headline-large font-medium">$ 140.00</span>
-              <span className="text-label-small bg-success-container text-on-success-container p-1 px-4 rounded-full">
+              <span className="rounded-full bg-success-container p-1 px-4 text-label-small text-on-success-container">
                 +$100
                 <Icon className="text-[16px]">arrow_upward</Icon>
               </span>
             </div>
 
             {/* Personal Volume */}
-            <div className="flex flex-col gap-4 items-center border-r-2 border-outline-variant">
-              <span className="text-label-large text-on-surface-variant align-middle flex flex-row items-center gap-2">
-                <Icon className="text-primary text-[42px]">stars</Icon>
+            <div
+              className={c(
+                "flex flex-col items-center gap-4",
+                statAdditionalClass,
+              )}
+            >
+              <span className="flex flex-row items-center gap-2 align-middle text-label-large text-on-surface-variant">
+                <Icon className="text-[42px] text-primary">stars</Icon>
                 Personal Volume
               </span>
               <span className="text-headline-large font-medium">20 PV</span>
-              <span className="text-label-small bg-success-container text-on-success-container p-1 px-4 rounded-full">
+              <span className="rounded-full bg-success-container p-1 px-4 text-label-small text-on-success-container">
                 +20 PV
                 <Icon className="text-[16px]">arrow_upward</Icon>
               </span>
             </div>
 
             {/* New Members */}
-            <div className="flex flex-col gap-4 items-center border-r-2 border-outline-variant">
-              <span className="text-label-large text-on-surface-variant align-middle flex flex-row items-center gap-2">
-                <Icon className="text-orange text-[42px]">account_circle</Icon>
+            <div
+              className={c(
+                "flex flex-col items-center gap-4",
+                statAdditionalClass,
+              )}
+            >
+              <span className="flex flex-row items-center gap-2 align-middle text-label-large text-on-surface-variant">
+                <Icon className="text-[42px] text-orange">account_circle</Icon>
                 New Members
               </span>
               <span className="text-headline-large font-medium">2</span>
-              <span className="text-label-small bg-success-container text-on-success-container p-1 px-4 rounded-full">
+              <span className="rounded-full bg-success-container p-1 px-4 text-label-small text-on-success-container">
                 +2 Members
                 <Icon className="text-[16px]">arrow_upward</Icon>
               </span>
             </div>
 
             {/* Account Status */}
-            <div className="flex flex-col gap-4 items-center">
-              <span className="text-label-large text-on-surface-variant align-middle flex flex-row items-center gap-2">
-                <Icon className="text-red text-[42px]">favorite</Icon>
+            <div
+              className={c(
+                "flex flex-col items-center gap-4",
+                statAdditionalClass,
+              )}
+            >
+              <span className="flex flex-row items-center gap-2 align-middle text-label-large text-on-surface-variant">
+                <Icon className="text-[42px] text-red">favorite</Icon>
                 Account Status
               </span>
               <span className="text-headline-large font-medium opacity-disabled-content">
                 O Day
               </span>
-              <div className="flex flex-col gap-2 items-center">
-                <span className="text-error text-title-large">Inactive</span>
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-title-large text-error">Inactive</span>
                 <span className="text-label-medium text-on-surface-variant">
                   Check out our Hermon Monthly Plan
                 </span>
@@ -191,23 +218,26 @@ const Page: React.FC = () => {
           </Card>
 
           {/* Weekly Cycles */}
-          <Card className="col-span-1 md:col-span-2 flex flex-col gap-8">
+          <Card className="col-span-1 flex flex-col gap-8 md:col-span-2">
             <div className="flex flex-row items-end">
               <h2 className="text-headline-large font-medium">Weekly Cycles</h2>
               <div className="flex-grow"></div>
-              <img src={calendar} alt="graph" />
+              <img
+                src={calendar}
+                alt="graph"
+              />
             </div>
 
             <div className="flex flex-row gap-4">
-              <select className="bg-surface-variant rounded-extra-large px-6 py-4 w-40">
+              <select className="w-40 rounded-extra-large bg-surface-variant px-6 py-4">
                 <option>Year</option>
               </select>
-              <select className="bg-surface-variant rounded-extra-large px-6 py-4 w-40">
+              <select className="w-40 rounded-extra-large bg-surface-variant px-6 py-4">
                 <option>Month</option>
               </select>
             </div>
 
-            <div className="flex flex-row gap-4 justify-around overflow-y-scroll">
+            <div className="flex flex-row justify-around gap-4 overflow-y-scroll">
               <div className="flex flex-col items-center gap-2">
                 <Cycle />
                 <p className="text-label-large">Week 1</p>
@@ -232,14 +262,17 @@ const Page: React.FC = () => {
             <div className="flex flex-row items-end">
               <h2 className="text-headline-large font-medium">Weekly Profit</h2>
               <div className="flex-grow"></div>
-              <img src={graph} alt="graph" />
+              <img
+                src={graph}
+                alt="graph"
+              />
             </div>
 
             <table className="w-full table-auto">
               <thead>
                 <tr>
-                  <th className="text-start pb-6">Bonus</th>
-                  <th className="text-start pb-6">Profit</th>
+                  <th className="pb-6 text-start">Bonus</th>
+                  <th className="pb-6 text-start">Profit</th>
                 </tr>
               </thead>
               <tbody>
@@ -265,10 +298,10 @@ const Page: React.FC = () => {
             </table>
             <div className="flex flex-col gap-4">
               <p className="font-medium">Est. Week Total</p>
-              <p className="text-success text-display-large font-medium text-center">
+              <p className="text-center text-display-large font-medium text-success">
                 $442.5
               </p>
-              <p className="text-on-surface-variant text-center">
+              <p className="text-center text-on-surface-variant">
                 All profit will be transfered to your Hermon Wallet
                 automatically.
               </p>
