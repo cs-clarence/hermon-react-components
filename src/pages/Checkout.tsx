@@ -65,7 +65,6 @@ export function CheckoutPage() {
 
         <Box style={{ flexDirection: "row", display: "flex", gap: "16px" }}>
           <Card
-            variant="outlined"
             sx={{
               width: "100%",
               backgroundColor: "#E7E7E7",
@@ -131,7 +130,6 @@ export function CheckoutPage() {
             </Box>
           </Card>
           <Card
-            variant="outlined"
             sx={{
               backgroundImage:
                 "linear-gradient(90deg, #1B4965 0%, #BEE9E8 100%)",
