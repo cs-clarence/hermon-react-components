@@ -66,7 +66,7 @@ export function Header() {
           </Link>
           <Link
             sx={{
-              color: "black",
+              color: "#777777",
             }}
           >
             <AccountCircleSharp sx={{ width: "42px", height: "42px" }} />
