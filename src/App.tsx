@@ -1,7 +1,7 @@
-import Dashboard from "$pages/Dashboard";
+import { CheckoutPage } from "$pages/Checkout";
 
 const App: React.FC = () => {
-  return <Dashboard />;
+  return <CheckoutPage />;
 };
 
 export default App;
