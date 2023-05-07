@@ -10,7 +10,158 @@ import {
   Typography,
   Button,
 } from "@mui/material";
-import { Lock, LockOpen } from "@mui/icons-material";
+import { Lock, LockOpen, AccountCircleSharp } from "@mui/icons-material";
+import logo from "$assets/logo.svg";
+
+export function Header() {
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+
+        backgroundColor: "white",
+        text: "black",
+        height: "66px",
+      }}
+    >
+      <Box
+        sx={{
+          width: "960px",
+          marginX: "auto",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <Box sx={{ height: "40px", width: "120px" }}>
+          <img
+            src={logo}
+            style={{ height: "100%", width: "100%" }}
+          />
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "42px",
+            alignItems: "center",
+          }}
+        >
+          <Link
+            sx={{
+              color: "black",
+            }}
+          >
+            <Typography>Home</Typography>
+          </Link>
+          <Link
+            sx={{
+              color: "black",
+            }}
+          >
+            <Typography>Products</Typography>
+          </Link>
+          <Link
+            sx={{
+              color: "black",
+            }}
+          >
+            <AccountCircleSharp sx={{ width: "42px", height: "42px" }} />
+          </Link>
+        </Box>
+      </Box>
+    </Box>
+  );
+}
+
+export function Footer() {
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        backgroundColor: "#E7E7E7",
+        text: "#777777",
+        paddingY: "32px",
+      }}
+    >
+      <Box sx={{ width: "960px" }}>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <Typography variant="caption">
+            More ways to shop: Find a{" "}
+            <a href="/">Hermon Holistic Health Hub </a>or other{" "}
+            <a href="/">Hermon Distributor</a> near you. Or go to
+            <a href="/">
+              1556 Block 5 Corner Lot Sitio Pag asa, Anupul, Bamban, Tarlac.
+              2317 Philippines.
+            </a>
+          </Typography>
+          <Box
+            sx={{
+              borderBottom: "1px solid #413E39BF",
+              padding: "0px",
+              margin: "0px",
+            }}
+          />
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography variant="caption">
+              Copyright © {new Date().getUTCFullYear()}
+              <a href="/">Hermon Holistic Distribution Inc.</a> All rights
+              reserved.
+            </Typography>
+            <Typography
+              variant="caption"
+              sx={{}}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                  gap: "16px",
+                  width: "100%",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Link
+                  sx={{ color: "#777777" }}
+                  href="/privacy-policy"
+                >
+                  Privacy Policy
+                </Link>
+                <Typography>|</Typography>
+                <Link
+                  sx={{ color: "#777777" }}
+                  href="/legal"
+                >
+                  Legal
+                </Link>
+                <Typography>|</Typography>
+                <Link
+                  sx={{ color: "#777777" }}
+                  href="/support"
+                >
+                  Support
+                </Link>
+                <Box sx={{ color: "#424245" }}>Philippines</Box>
+              </Box>
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
+  );
+}
 
 export function CheckoutPage() {
   return (
@@ -20,8 +171,10 @@ export function CheckoutPage() {
         minHeight: "100vh",
       }}
     >
+      <Header />
       <Box
         sx={{
+          paddingY: "128px",
           display: "flex",
           flexDirection: "column",
           gap: "64px",
@@ -189,6 +342,8 @@ export function CheckoutPage() {
           </Card>
         </Box>
       </Box>
+
+      <Footer />
     </Box>
   );
 }
