@@ -37,20 +37,6 @@ export function CheckoutPage() {
             <Link
               underline="hover"
               color="inherit"
-              href="/"
-            >
-              Plan
-            </Link>
-            <Link
-              underline="hover"
-              color="inherit"
-              href="/material-ui/getting-started/installation/"
-            >
-              Available Product
-            </Link>
-            <Link
-              underline="hover"
-              color="inherit"
               href="/material-ui/getting-started/installation/"
             >
               Shipping Address
