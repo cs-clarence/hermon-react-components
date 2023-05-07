@@ -183,20 +183,6 @@ export function CheckoutPage() {
         }}
       >
         <Box>
-          <Breadcrumbs
-            aria-label="breadcrumb"
-            separator=">"
-          >
-            <Link
-              underline="hover"
-              color="inherit"
-              href="/material-ui/getting-started/installation/"
-            >
-              Shipping Address
-            </Link>
-            <Typography color="text.primary">Payment</Typography>
-          </Breadcrumbs>
-
           <Box sx={{ borderBottom: "1px solid black", paddingY: "16px" }}>
             <Typography variant="h4">Who you want to become?</Typography>
           </Box>
