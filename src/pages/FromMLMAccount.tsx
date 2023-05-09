@@ -200,6 +200,8 @@ export function FromMLMAccountPage() {
               sx={{
                 width: "100%",
                 backgroundColor: "#E7E7E7",
+                boxShadow: "none",
+                color: "#A7A7A7",
               }}
             >
               <Box
@@ -212,7 +214,14 @@ export function FromMLMAccountPage() {
                   justifyContent: "space-between",
                 }}
               >
-                <Typography variant="h5">Continue as Guest</Typography>
+                <Typography
+                  variant="h5"
+                  sx={{
+                    color: "black",
+                  }}
+                >
+                  Continue as Guest
+                </Typography>
                 <Box
                   sx={{
                     display: "flex",
@@ -227,7 +236,12 @@ export function FromMLMAccountPage() {
                       gap: "16px",
                     }}
                   >
-                    <Typography variant="body1">
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        color: "black",
+                      }}
+                    >
                       <LockOpen />
                       &nbsp; Access and Purchase Hermon Products
                     </Typography>
@@ -254,6 +268,7 @@ export function FromMLMAccountPage() {
 
                 color: "white",
                 width: "100%",
+                boxShadow: "none",
               }}
             >
               <Box
@@ -406,6 +421,8 @@ export function FromMLMAccountPage() {
               sx={{
                 width: "100%",
                 backgroundColor: "#E7E7E7",
+                boxShadow: "none",
+                color: "#777777",
               }}
             >
               <Box
@@ -419,7 +436,14 @@ export function FromMLMAccountPage() {
                 }}
               >
                 <Box>
-                  <Typography variant="h5">Starter Package</Typography>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      color: "black",
+                    }}
+                  >
+                    Starter Package
+                  </Typography>
                   <Typography variant="h6">2 Bottles</Typography>
                 </Box>
                 <Box
@@ -453,6 +477,8 @@ export function FromMLMAccountPage() {
               sx={{
                 width: "100%",
                 backgroundColor: "#E7E7E7",
+                boxShadow: "none",
+                color: "#777777",
               }}
             >
               <Box
@@ -466,7 +492,14 @@ export function FromMLMAccountPage() {
                 }}
               >
                 <Box>
-                  <Typography variant="h5">Business Package</Typography>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      color: "black",
+                    }}
+                  >
+                    Business Package
+                  </Typography>
                   <Typography variant="h6">6 Bottles</Typography>
                 </Box>
                 <Box
@@ -501,6 +534,7 @@ export function FromMLMAccountPage() {
                 width: "100%",
                 backgroundColor: "#777777",
                 color: "white",
+                boxShadow: "none",
               }}
             >
               <Box
@@ -550,6 +584,7 @@ export function FromMLMAccountPage() {
                 width: "100%",
                 backgroundImage: "linear-gradient(-120deg, #8ECAE6, #d89b49)",
                 color: "white",
+                boxShadow: "none",
               }}
             >
               <Box
