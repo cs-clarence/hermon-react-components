@@ -6,6 +6,7 @@ import { Box, Card, Link, Typography } from "@mui/material";
 import { Lock, LockOpen, AccountCircleSharp } from "@mui/icons-material";
 import logo from "$assets/logo.svg";
 import { bottles } from "$assets";
+import { useNavigate } from "react-router-dom";
 
 export function Header() {
   return (
@@ -158,6 +159,8 @@ export function Footer() {
 }
 
 export function FromMLMAccountPage() {
+  const navigate = useNavigate();
+
   return (
     <Box
       sx={{
@@ -202,7 +205,9 @@ export function FromMLMAccountPage() {
                 backgroundColor: "#E7E7E7",
                 boxShadow: "none",
                 color: "#A7A7A7",
+                cursor: "pointer",
               }}
+              onClick={() => navigate("/guest")}
             >
               <Box
                 sx={{
@@ -269,7 +274,9 @@ export function FromMLMAccountPage() {
                 color: "white",
                 width: "100%",
                 boxShadow: "none",
+                cursor: "pointer",
               }}
+              onClick={() => navigate("/reseller")}
             >
               <Box
                 sx={{
@@ -356,7 +363,9 @@ export function FromMLMAccountPage() {
                 backgroundImage:
                   "linear-gradient(90deg, #1B4965 0%, #BEE9E8 100%)",
                 boxShadow: "none",
+                cursor: "pointer",
               }}
+              onClick={() => navigate("/legacy-package")}
             >
               <Box
                 sx={{
@@ -424,7 +433,9 @@ export function FromMLMAccountPage() {
                 backgroundColor: "#E7E7E7",
                 boxShadow: "none",
                 color: "#777777",
+                cursor: "pointer",
               }}
+              onClick={() => navigate("/starter-package")}
             >
               <Box
                 sx={{
@@ -487,7 +498,9 @@ export function FromMLMAccountPage() {
                 backgroundColor: "#E7E7E7",
                 boxShadow: "none",
                 color: "#777777",
+                cursor: "pointer",
               }}
+              onClick={() => navigate("/business-package")}
             >
               <Box
                 sx={{
@@ -550,7 +563,9 @@ export function FromMLMAccountPage() {
                 backgroundColor: "#777777",
                 color: "white",
                 boxShadow: "none",
+                cursor: "pointer",
               }}
+              onClick={() => navigate("/premiere-package")}
             >
               <Box
                 sx={{
@@ -600,7 +615,9 @@ export function FromMLMAccountPage() {
                 backgroundImage: "linear-gradient(-120deg, #8ECAE6, #d89b49)",
                 color: "white",
                 boxShadow: "none",
+                cursor: "pointer",
               }}
+              onClick={() => navigate("/achievers-package")}
             >
               <Box
                 sx={{
