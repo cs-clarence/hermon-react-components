@@ -156,7 +156,7 @@ export function Footer() {
   );
 }
 
-export function CheckoutPage() {
+export function FromResellerAccountPage() {
   return (
     <Box
       sx={{
@@ -177,7 +177,11 @@ export function CheckoutPage() {
       >
         <Box>
           <Box sx={{ borderBottom: "1px solid black", paddingY: "16px" }}>
-            <Typography variant="h4">Who you want to become?</Typography>
+            <Typography variant="h4">
+              Do you want to join our reseller program
+              <br />
+              and enjoy exclusive benefits?
+            </Typography>
           </Box>
         </Box>
 
@@ -198,7 +202,7 @@ export function CheckoutPage() {
                 minHeight: "400px",
               }}
             >
-              <Typography variant="h4">Become a User</Typography>
+              <Typography variant="h4">Continue as Guest</Typography>
               <Box
                 sx={{
                   display: "flex",

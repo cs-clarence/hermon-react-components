@@ -1,8 +1,7 @@
-//import { CheckoutPage } from "$pages/Checkout";
-import DashboardPage from "$pages/Dashboard";
+import { FromMLMAccountPage } from "$pages/FromMLMAccount";
 
 const App: React.FC = () => {
-  return <DashboardPage />;
+  return <FromMLMAccountPage />;
 };
 
 export default App;
