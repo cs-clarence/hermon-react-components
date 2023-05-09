@@ -444,7 +444,14 @@ export function FromMLMAccountPage() {
                   >
                     Starter Package
                   </Typography>
-                  <Typography variant="h6">2 Bottles</Typography>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      color: "black",
+                    }}
+                  >
+                    2 Bottles
+                  </Typography>
                 </Box>
                 <Box
                   sx={{
@@ -500,7 +507,14 @@ export function FromMLMAccountPage() {
                   >
                     Business Package
                   </Typography>
-                  <Typography variant="h6">6 Bottles</Typography>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      color: "black",
+                    }}
+                  >
+                    6 Bottles
+                  </Typography>
                 </Box>
                 <Box
                   sx={{
