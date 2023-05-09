@@ -355,6 +355,7 @@ export function FromMLMAccountPage() {
                 gridColumn: "1 / 3",
                 backgroundImage:
                   "linear-gradient(90deg, #1B4965 0%, #BEE9E8 100%)",
+                boxShadow: "none",
               }}
             >
               <Box
