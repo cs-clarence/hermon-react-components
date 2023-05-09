@@ -1,8 +1,4 @@
-import {
-  InteractionStateClasses,
-  InteractionState,
-  StateLayer,
-} from "$components";
+import { InteractionStateClasses, InteractionState } from "$components";
 import c from "classnames";
 
 export interface DrawerItemProps {
@@ -19,7 +15,7 @@ const defaults: DrawerItemProps = {
 };
 
 const stateClasses: InteractionStateClasses = {
-  selected: "text-on-primary bg-primary",
+  selected: "text-on-primary bg-gradient-to-r from-[#1B4965] to-[#BEE9E8]",
   enabled: "text-on-surface-variant",
 };
 
@@ -34,7 +30,6 @@ const DrawerItem: React.FC<DrawerItemProps> = (props) => {
         stateClasses[props.state ?? "enabled"],
       )}
     >
-      <StateLayer state={props.state} />
       <div>{props.start}</div>
       <div>{props.children}</div>
     </a>

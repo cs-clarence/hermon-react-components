@@ -1,7 +1,7 @@
-const material3 = require("@rencedm112/tailwind-md");
+import material3 from "@tailwind-md/plugin";
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {

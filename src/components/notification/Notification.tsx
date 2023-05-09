@@ -23,7 +23,6 @@ const Notification: React.FC<NotificationProps> = (props) => {
         props.className,
       )}
     >
-      <StateLayer state={props.state}></StateLayer>
       <div className="rounded-full overflow-clip aspect-square w-12">
         {props.icon ?? <Icon className="text-[48px] text-orange">info</Icon>}
       </div>
