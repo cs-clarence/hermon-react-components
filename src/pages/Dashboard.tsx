@@ -121,7 +121,7 @@ const Page: React.FC = () => {
         </div>
       </div>
 
-      <div className=" flex w-full flex-grow flex-col gap-8">
+      <div className="flex w-full flex-grow flex-col gap-8">
         {/* Header */}
         <TopAppBar
           className={c("py-4 text-on-surface-variant sm:px-4")}
@@ -143,7 +143,7 @@ const Page: React.FC = () => {
           end={
             // Notifications and Account
             <div className="flex flex-row items-center gap-4 sm:gap-8">
-              <div>
+              <div className="relative">
                 <Icon
                   className="text-[42px]"
                   filled
@@ -152,7 +152,7 @@ const Page: React.FC = () => {
                 </Icon>
                 <Badge className="absolute top-0 right-0">1</Badge>
               </div>
-              <div className="flex flex-row items-center gap-3 bg-black/10 py-2 px-4 rounded-full">
+              <div className="flex flex-row items-center gap-3 bg-white/30 py-2 px-4 rounded-full">
                 <Icon
                   className="text-[42px]"
                   filled

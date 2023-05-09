@@ -13,10 +13,10 @@ const TopAppBar: React.FC<TopAppBarProps> = (props) => {
   props = { ...defaults, ...props };
 
   return (
-    <div className="bg-gradient-to-r from-[#1B4965]">
+    <div className="bg-gradient-to-r from-[#1B4965] to-[#BEE9E8] z-40 sticky top-0">
       <header
         className={c(
-          `container px-4 mx-auto flex flex-row items-center to-[#BEE9E8] text-white`,
+          `container px-4 mx-auto flex flex-row items-center text-white`,
           props.className,
         )}
       >
