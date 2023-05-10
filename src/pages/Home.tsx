@@ -148,7 +148,7 @@ export const HomePage: React.FC = () => {
                 </Icon>
                 <Badge className="absolute top-0 right-0">1</Badge>
               </div>
-              <div className="flex flex-row items-center gap-3 bg-white/30 py-2 px-4 rounded-full">
+              <div className="flex flex-row items-center gap-3 bg-white/30 p-2 pr-6 rounded-full">
                 <Icon
                   className="text-[42px]"
                   filled
@@ -173,9 +173,9 @@ export const HomePage: React.FC = () => {
           <div className="min-w-[280px] top-0 left-0 hidden 2xl:block">
             {drawer}
           </div>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {/* Stats */}
-            <Card className="col-span-1 grid !p-0 sm:grid-cols-2 md:col-span-2 xl:grid-cols-3 2xl:col-span-3">
+            <Card className="col-span-1 grid !p-0 sm:grid-cols-2 md:col-span-2 lg:grid-cols-3 lg:col-span-3">
               {/* Total Revenue */}
               <div
                 className={c(
@@ -243,6 +243,88 @@ export const HomePage: React.FC = () => {
                 </span>
               </div>
             </Card>
+
+            <div className="grid grid-cols-2 col-span-1 lg:col-span-2 gap-4">
+              <Card className="!p-0 overflow-clip max-h-[300px]">
+                <div className="bg-gradient-to-r from-[#1B4965] to-[#BEE9E8] text-on-primary font-medium text-title-large p-6">
+                  Hermon Wallet
+                </div>
+                <div className="p-6 flex flex-col gap-8">
+                  <div className="flex flex-col">
+                    <span className="text-label-large text-on-surface-variant">
+                      Available Balance
+                    </span>
+                    <span className="text-headline-large font-medium">
+                      <span className="text-on-surface-variant/50">$</span>
+                      140.00
+                    </span>
+                  </div>
+
+                  <div className="flex flex-row justify-evenly gap-4 w-full">
+                    <div className="flex flex-col gap-1 items-center">
+                      <Icon
+                        opticalSize={40}
+                        className="text-on-surface-variant text-[40px] rounded-large border-outline-variant border-2 p-2"
+                      >
+                        arrow_circle_up
+                      </Icon>
+                      <span className="text-on-surface-variant text-label-medium">
+                        Send
+                      </span>
+                    </div>
+                    <div className="flex flex-col gap-1 items-center">
+                      <Icon
+                        opticalSize={40}
+                        className="text-on-surface-variant text-[40px] rounded-large border-outline-variant border-2 p-2"
+                      >
+                        place_item
+                      </Icon>
+                      <span className="text-on-surface-variant text-label-medium">
+                        Receive
+                      </span>
+                    </div>
+                    <div className="flex flex-col gap-1 items-center">
+                      <Icon
+                        opticalSize={40}
+                        className="text-on-surface-variant text-[40px] rounded-large border-outline-variant border-2 p-2"
+                      >
+                        receipt_long
+                      </Icon>
+                      <span className="text-on-surface-variant text-label-medium">
+                        Recent
+                      </span>
+                    </div>
+                    <div className="flex flex-col gap-1 items-center">
+                      <Icon
+                        opticalSize={40}
+                        className="text-on-surface-variant text-[40px] rounded-large border-outline-variant border-2 p-2"
+                      >
+                        settings
+                      </Icon>
+                      <span className="text-on-surface-variant text-label-medium">
+                        Receive
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="!p-0 overflow-clip max-h-[300px]">
+                <div className="bg-gradient-to-r from-[#1B4965] to-[#BEE9E8] text-on-primary font-medium text-title-large p-6">
+                  Hermon Incentives
+                </div>
+                <div className="p-6 flex flex-col gap-8">
+                  <div className="flex flex-col text-label-large text-on-surface-variant">
+                    Sell your 1st 1,000 Bottles to get your <br />
+                    $100 from Hermon!
+                  </div>
+
+                  <div className="flex flex-row justify-evenly gap-4 w-full"></div>
+                </div>
+              </Card>
+
+              <Card className="col-span-2"></Card>
+            </div>
 
             {/* Activities */}
             <Card className="col-span-1 flex flex-col gap-4">
