@@ -156,8 +156,6 @@ export function DashboardLayout() {
           <div className="min-w-[280px] top-0 left-0 hidden 2xl:block">
             {drawer}
           </div>
-          {/* Content */}
-
           <Outlet />
         </div>
       </div>

@@ -115,7 +115,7 @@ export const HomePage: React.FC = () => {
         </div>
       </Card>
 
-      <div className="grid grid-cols-2 col-span-1 lg:col-span-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 col-span-1 lg:col-span-2 gap-4">
         <Card className="!p-0 overflow-clip max">
           <div className="bg-gradient-to-r from-[#1B4965] to-[#BEE9E8] text-on-primary font-medium text-title-large p-6">
             Hermon Wallet
@@ -207,7 +207,7 @@ export const HomePage: React.FC = () => {
           </div>
         </Card>
 
-        <Card className="col-span-2 flex flex-col gap-8 items-start">
+        <Card className="col-span-1 lg:col-span-2 flex flex-col gap-8 items-start">
           <AffiliateCardContent />
         </Card>
       </div>
