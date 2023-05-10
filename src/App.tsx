@@ -50,10 +50,6 @@ const router = createBrowserRouter([
     path: "/retailStore",
     element: <FromMLMAccountPage />,
   },
-  {
-    path: "/:path*",
-    element: <CatchAll />,
-  },
 ]);
 
 const App: React.FC = () => {
