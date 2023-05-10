@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import "./index.postcss";
+import { DashboardLayout } from "$layouts/Dashboard";
 
 function CatchAll() {
   const p = useParams();
@@ -17,6 +18,7 @@ function CatchAll() {
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <DashboardLayout />,
     children: [
       {
         index: true,
@@ -27,14 +29,30 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "retailStore",
-        element: <FromMLMAccountPage />,
+        path: "members",
+        element: <div>Members</div>,
       },
       {
-        path: ":path*",
-        element: <CatchAll />,
+        path: "my-store",
+        element: <div>My Store</div>,
+      },
+      {
+        path: "news-and-updates",
+        element: <div>News and Updates</div>,
+      },
+      {
+        path: "settings",
+        element: <div>Settings</div>,
       },
     ],
+  },
+  {
+    path: "/retailStore",
+    element: <FromMLMAccountPage />,
+  },
+  {
+    path: "/:path*",
+    element: <CatchAll />,
   },
 ]);
 
