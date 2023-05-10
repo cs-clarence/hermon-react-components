@@ -4,16 +4,11 @@ import {
   Navigate,
   RouterProvider,
   createBrowserRouter,
-  useParams,
 } from "react-router-dom";
 
 import "./index.postcss";
 import { DashboardLayout } from "$layouts/Dashboard";
-
-function CatchAll() {
-  const p = useParams();
-  return <div>{p.path}</div>;
-}
+import { UnderConstructionPage } from "$pages/UnderConstruction";
 
 const router = createBrowserRouter([
   {
@@ -30,19 +25,19 @@ const router = createBrowserRouter([
       },
       {
         path: "members",
-        element: <div>Members</div>,
+        element: <UnderConstructionPage />,
       },
       {
         path: "my-store",
-        element: <div>My Store</div>,
+        element: <UnderConstructionPage />,
       },
       {
         path: "news-and-updates",
-        element: <div>News and Updates</div>,
+        element: <UnderConstructionPage />,
       },
       {
         path: "settings",
-        element: <div>Settings</div>,
+        element: <UnderConstructionPage />,
       },
     ],
   },
