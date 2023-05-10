@@ -32,7 +32,7 @@ export function Header() {
         <Box sx={{ height: "40px", width: "120px" }}>
           <img
             src={logo}
-            style={{ height: "100%", width: "100%" }}
+            iconStyle={{ height: "100%", width: "100%" }}
           />
         </Box>
         <Box
@@ -185,7 +185,7 @@ export function FromResellerAccountPage() {
           </Box>
         </Box>
 
-        <Box style={{ flexDirection: "row", display: "flex", gap: "16px" }}>
+        <Box iconStyle={{ flexDirection: "row", display: "flex", gap: "16px" }}>
           <Card
             sx={{
               width: "100%",

@@ -1,19 +1,47 @@
 import { calendar, graph, siteLogo } from "$assets";
-import {
-  Drawer,
-  DrawerItem,
-  DrawerItemProps,
-  Notification,
-  TopAppBar,
-} from "$components";
+import { Drawer, DrawerItem, Notification, TopAppBar } from "$components";
 import { Icon } from "$components";
 import { Badge } from "$components/badge";
 import { Card } from "$components/card";
-import { Cycle } from "$components/cycle";
 import c from "classnames";
 import { useEffect, useState } from "react";
-import "../index.postcss";
 import { NavLink } from "react-router-dom";
+
+function AffiliateCardContent() {
+  const [showLink, setShowLink] = useState(false);
+  return (
+    <>
+      <div className="flex flex-col gap-2">
+        <p className="font-medium text-title-large">
+          Your Hermon affiliate link
+        </p>
+        <p className="text-on-surface-variant">
+          Your journey starts here! Share your link now.
+        </p>
+      </div>
+      <div className="flex flex-col gap-4 w-full items-start">
+        <div className="w-full flex flex-row items-center gap-4">
+          <input
+            value="https://hermonsystems.com/retailStore/23"
+            readOnly
+            type={showLink ? "text" : "password"}
+            className="bg-surface-variant rounded-full px-4 py-2 text-body-medium text-on-surface-variant w-full"
+          />
+          <Icon
+            filled
+            onClick={() => setShowLink((s) => !s)}
+            className="text-on-surface-variant text-[32px] select-none cursor-pointer"
+          >
+            {showLink ? "visibility_off" : "visibility"}
+          </Icon>
+        </div>
+        <button className="text-on-primary min-w-[220px] min-h-[48px] rounded-full bg-gradient-to-r from-[#1B4965] to-[#BEE9E8]">
+          Copy link
+        </button>
+      </div>
+    </>
+  );
+}
 
 export const HomePage: React.FC = () => {
   const [showDrawer, setShowDrawer] = useState(false);
@@ -245,7 +273,7 @@ export const HomePage: React.FC = () => {
             </Card>
 
             <div className="grid grid-cols-2 col-span-1 lg:col-span-2 gap-4">
-              <Card className="!p-0 overflow-clip max-h-[300px]">
+              <Card className="!p-0 overflow-clip max">
                 <div className="bg-gradient-to-r from-[#1B4965] to-[#BEE9E8] text-on-primary font-medium text-title-large p-6">
                   Hermon Wallet
                 </div>
@@ -302,14 +330,14 @@ export const HomePage: React.FC = () => {
                         settings
                       </Icon>
                       <span className="text-on-surface-variant text-label-medium">
-                        Receive
+                        Setup
                       </span>
                     </div>
                   </div>
                 </div>
               </Card>
 
-              <Card className="!p-0 overflow-clip max-h-[300px]">
+              <Card className="!p-0 overflow-clip">
                 <div className="bg-gradient-to-r from-[#1B4965] to-[#BEE9E8] text-on-primary font-medium text-title-large p-6">
                   Hermon Incentives
                 </div>
@@ -336,7 +364,9 @@ export const HomePage: React.FC = () => {
                 </div>
               </Card>
 
-              <Card className="col-span-2"></Card>
+              <Card className="col-span-2 flex flex-col gap-8 items-start">
+                <AffiliateCardContent />
+              </Card>
             </div>
 
             {/* Activities */}

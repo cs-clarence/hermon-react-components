@@ -7,6 +7,8 @@ import {
   useParams,
 } from "react-router-dom";
 
+import "./index.postcss";
+
 function CatchAll() {
   const p = useParams();
   return <div>{p.path}</div>;

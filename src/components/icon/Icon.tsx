@@ -2,9 +2,9 @@ import c from "classnames";
 
 type KnownIconNames = "";
 
-export interface IconProps {
+export interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
   children?: string | KnownIconNames;
-  style?: "sharp" | "rounded" | "outlined";
+  iconStyle?: "sharp" | "rounded" | "outlined";
   filled?: boolean;
   weight?: 100 | 200 | 300 | 400 | 500 | 600 | 700;
   grade?: -25 | 0 | 200;
@@ -13,13 +13,14 @@ export interface IconProps {
 }
 
 const defaults = {
-  style: "rounded",
+  iconStyle: "rounded",
 } satisfies IconProps;
 
 const Icon: React.FC<IconProps> = (props) => {
   props = { ...defaults, ...props };
   return (
     <span
+      {...props}
       style={{
         "--m3-icon-weight": props.weight,
         "--m3-icon-grade": props.grade,
@@ -27,7 +28,7 @@ const Icon: React.FC<IconProps> = (props) => {
         "--m3-icon-fill":
           props.filled !== undefined ? (props.filled ? 1 : 0) : undefined,
       }}
-      className={c(`material-symbols-${props.style}`, props.className)}
+      className={c(`material-symbols-${props.iconStyle}`, props.className)}
     >
       {props.children}
     </span>
