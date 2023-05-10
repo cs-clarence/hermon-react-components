@@ -198,9 +198,7 @@ export function FromMLMAccountPage() {
             </Box>
           </Box>
 
-          <Box
-            iconStyle={{ flexDirection: "row", display: "flex", gap: "16px" }}
-          >
+          <Box style={{ flexDirection: "row", display: "flex", gap: "16px" }}>
             <Card
               sx={{
                 width: "100%",
@@ -351,7 +349,7 @@ export function FromMLMAccountPage() {
           </Box>
 
           <Box
-            iconStyle={{
+            style={{
               display: "grid",
               gap: "16px",
               gridTemplateColumns: "repeat(2, 1fr)",
@@ -417,7 +415,7 @@ export function FromMLMAccountPage() {
                   </Box>
                 </Box>
                 <img
-                  iconStyle={{
+                  style={{
                     objectPosition: "center bottom",
                     objectFit: "contain",
                     width: "360px",
