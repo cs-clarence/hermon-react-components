@@ -12,8 +12,10 @@ import { Card } from "$components/card";
 import { Cycle } from "$components/cycle";
 import c from "classnames";
 import { useEffect, useState } from "react";
+import "../index.postcss";
+import { NavLink } from "react-router-dom";
 
-const Page: React.FC = () => {
+export const DashboardPage: React.FC = () => {
   const [showDrawer, setShowDrawer] = useState(false);
 
   useEffect(() => {
@@ -33,49 +35,32 @@ const Page: React.FC = () => {
     };
   });
 
-  const menuItems: DrawerItemProps[] = [
+  const menuItems = [
     {
       children: "Home",
-      href: "/",
+      href: "/home",
       state: "selected",
-      start: (
-        <Icon
-          style="rounded"
-          filled
-        >
-          home
-        </Icon>
-      ),
+      iconCode: "home",
     },
     {
       children: "Members",
-      href: "/",
-      start: <Icon style="rounded">group</Icon>,
-    },
-    {
-      children: "Organizations",
-      href: "/",
-      start: <Icon style="rounded">domain</Icon>,
+      href: "/members",
+      iconCode: "group",
     },
     {
       children: "My Store",
-      href: "/",
-      start: <Icon style="rounded">shopping_bag</Icon>,
-    },
-    {
-      children: "Library",
-      href: "/",
-      start: <Icon style="rounded">library_books</Icon>,
+      href: "/shopping-bag",
+      iconCode: "shopping_bag",
     },
     {
       children: "News and Updates",
-      href: "/",
-      start: <Icon style="rounded">feed</Icon>,
+      href: "/news-and-updates",
+      iconCode: "feed",
     },
     {
       children: "Settings",
-      href: "/",
-      start: <Icon style="rounded">settings</Icon>,
+      href: "/settings",
+      iconCode: "settings",
     },
   ];
 
@@ -85,13 +70,24 @@ const Page: React.FC = () => {
   const drawer = (
     <Drawer>
       {menuItems.map((item, i) => (
-        <DrawerItem
-          {...item}
+        <NavLink
+          to={item.href}
           key={i}
-        />
+        >
+          {({ isActive }) => (
+            <DrawerItem
+              state={isActive ? "selected" : undefined}
+              key={i}
+              leading={<Icon filled={isActive}>{item.iconCode}</Icon>}
+            >
+              {item.children}
+            </DrawerItem>
+          )}
+        </NavLink>
       ))}
     </Drawer>
   );
+
   return (
     <div className="flex flex-row items-start gap-8">
       <div
@@ -448,5 +444,3 @@ const Page: React.FC = () => {
     </div>
   );
 };
-
-export default Page;
