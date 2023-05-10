@@ -9,6 +9,7 @@ import {
 import "./index.postcss";
 import { DashboardLayout } from "$layouts/Dashboard";
 import { UnderConstructionPage } from "$pages/UnderConstruction";
+import { NewsAndUpdatesPage } from "$pages/NewsAndUpdates";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: "news-and-updates",
-        element: <UnderConstructionPage />,
+        element: <NewsAndUpdatesPage />,
       },
       {
         path: "settings",
