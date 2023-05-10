@@ -2,10 +2,11 @@ import { Notification } from "$components";
 import { Icon } from "$components";
 import { Card } from "$components/card";
 import c from "classnames";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function AffiliateCardContent() {
   const [showLink, setShowLink] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
   return (
     <>
       <div className="flex flex-col gap-2">
@@ -19,6 +20,7 @@ function AffiliateCardContent() {
       <div className="flex flex-col gap-4 w-full items-start">
         <div className="w-full flex flex-row items-center gap-4">
           <input
+            ref={inputRef}
             value="https://hermonsystems.com/retailStore/23"
             readOnly
             type={showLink ? "text" : "password"}
@@ -32,7 +34,13 @@ function AffiliateCardContent() {
             {showLink ? "visibility_off" : "visibility"}
           </Icon>
         </div>
-        <button className="text-on-primary min-w-[220px] min-h-[48px] rounded-full bg-gradient-to-r from-[#1B4965] to-[#BEE9E8]">
+        <button
+          onClick={async () => {
+            await navigator.clipboard.writeText(inputRef.current?.value ?? "");
+            alert("Affiliate link has been copied!");
+          }}
+          className="text-on-primary min-w-[220px] min-h-[48px] rounded-full bg-gradient-to-r from-[#1B4965] to-[#BEE9E8]"
+        >
           Copy link
         </button>
       </div>
