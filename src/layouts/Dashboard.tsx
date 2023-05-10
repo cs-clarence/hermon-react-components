@@ -134,7 +134,7 @@ export function DashboardLayout() {
                 </Icon>
                 <Badge className="absolute top-0 right-0">1</Badge>
               </div>
-              <div className="flex flex-row items-center gap-3 bg-white/30 p-2 pr-6 rounded-full">
+              <div className="flex flex-row items-center gap-3 bg-white/30 p-2 sm:pr-6 rounded-full">
                 <Icon
                   className="text-[42px]"
                   filled
