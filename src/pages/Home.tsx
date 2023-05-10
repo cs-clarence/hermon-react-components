@@ -319,7 +319,20 @@ export const HomePage: React.FC = () => {
                     $100 from Hermon!
                   </div>
 
-                  <div className="flex flex-row justify-evenly gap-4 w-full"></div>
+                  <div className="flex flex-col gap-2">
+                    <div className="flex flex-row justify-evenly gap-4 w-full">
+                      <div className="flex flex-row justify-between w-full font-bold">
+                        <p>Sell 1,000 Bottles</p>
+                        <p>4%</p>
+                      </div>
+                    </div>
+                    <div className="w-full h-4 bg-surface-variant rounded-full overflow-clip">
+                      <div className="w-[8%] h-full bg-success rounded-full"></div>
+                    </div>
+                    <p className="place-self-end text-on-surface-variant text-label-small">
+                      960 bottles left
+                    </p>
+                  </div>
                 </div>
               </Card>
 
