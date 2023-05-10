@@ -1,5 +1,5 @@
 import { FromMLMAccountPage } from "$pages/FromMLMAccount";
-import { DashboardPage } from "$pages/Dashboard";
+import { HomePage } from "$pages/Home";
 import {
   Navigate,
   RouterProvider,
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: "home",
-        element: <DashboardPage />,
+        element: <HomePage />,
       },
       {
         path: "retailStore",

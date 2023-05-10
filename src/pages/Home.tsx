@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
 import "../index.postcss";
 import { NavLink } from "react-router-dom";
 
-export const DashboardPage: React.FC = () => {
+export const HomePage: React.FC = () => {
   const [showDrawer, setShowDrawer] = useState(false);
 
   useEffect(() => {
